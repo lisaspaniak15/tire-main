@@ -1,0 +1,6 @@
+{
+  "name": "tire-main",
+  "scripts": {
+    "start": "npx serve -p 3001 --open"
+  }
+}

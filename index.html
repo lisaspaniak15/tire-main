@@ -3,54 +3,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Truth in Real Estate</title>
+  <title>Truth in Real Estate® — Find a TruthCertified™ Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0f1117;
-      color: #ffffff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+    :root {
+      --navy:   #14213d;
+      --cream:  #faf9f6;
+      --teal:   #7a928d;
+      --gold:   #d4b07a;
+      --altbg:  #f3f8fb;
+      --white:  #ffffff;
+      --text:   #2d3f50;
     }
-    .logo { font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: #a0a0b0; margin-bottom: 2rem; }
-    h1 { font-size: 3rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
-    h1 span { color: #c9a84c; }
-    p { font-size: 1.1rem; color: #a0a0b0; max-width: 480px; line-height: 1.7; margin-bottom: 3rem; }
-    .links { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
-    a {
-      padding: 0.75rem 2rem;
-      border-radius: 6px;
-      text-decoration: none;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e8e2d9;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
       font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.9rem;
       font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+    }
+    .nav-cta:hover { background: #1c2e58; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(212,176,122,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      font-size: 1.15rem;
+      color: #b8c5d0;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.85rem 2rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
       transition: opacity 0.2s;
     }
-    a:hover { opacity: 0.8; }
-    .primary { background: #c9a84c; color: #0f1117; }
-    .secondary { border: 1px solid #333; color: #ffffff; }
-    .coming-soon {
-      margin-top: 4rem;
-      font-size: 0.8rem;
-      color: #444;
-      letter-spacing: 0.1em;
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* SECTION BASICS */
+    section { padding: 4.5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+    .section-heading {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--teal);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    /* HOW IT WORKS */
+    .how { background: var(--white); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .step { text-align: center; padding: 2rem 1.5rem; }
+    .step-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .step h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .step p { font-size: 0.95rem; color: var(--teal); line-height: 1.65; }
+
+    /* WHY TRUTHCERTIFIED */
+    .why { background: var(--altbg); }
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .pillar {
+      background: var(--white);
+      border: 1px solid #e8e2d9;
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .pillar-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .pillar h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .pillar p { font-size: 0.9rem; color: var(--teal); line-height: 1.6; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--navy); color: var(--white); }
+    .testimonials .section-heading { color: var(--white); }
+    .testimonials .section-sub { color: #b8c5d0; }
+    .testimonials .section-label { color: var(--gold); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.75rem;
+    }
+    .card p { font-size: 0.95rem; line-height: 1.7; color: #d8e2ea; margin-bottom: 1.25rem; }
+    .card-name { font-size: 0.85rem; font-weight: 700; color: var(--gold); }
+
+    /* TEAM */
+    .team { background: var(--cream); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .member {
+      border: 1px solid #e8e2d9;
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      background: var(--white);
+    }
+    .member-role { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .member h3 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 0.75rem; }
+    .member p { font-size: 0.9rem; color: var(--teal); line-height: 1.65; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--gold);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .cta-banner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 0.75rem; }
+    .cta-banner p { font-size: 1rem; color: #4a3620; margin-bottom: 2rem; }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .btn-dark:hover { opacity: 0.85; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: #8a9ab0;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer strong { color: var(--white); }
+
+    @media (max-width: 600px) {
+      .nav-links .nav-cta { display: none; }
+      .hero { padding: 3.5rem 1.5rem 3rem; }
     }
   </style>
 </head>
 <body>
-  <div class="logo">Truth in Real Estate</div>
-  <h1>Real estate advice you can <span>trust.</span></h1>
-  <p>We match sellers with vetted, seller-focused agents — no upsells, no pressure, no guesswork.</p>
-  <div class="links">
-    <a class="primary" href="https://tire-clients.fly.dev">I'm a Seller or Buyer</a>
-    <a class="secondary" href="https://tire-agents.fly.dev">I'm an Agent</a>
+
+  <nav>
+    <a class="nav-brand" href="/">Truth in Real Estate<span>®</span></a>
+    <div class="nav-links">
+      <a href="/sellers-playbook.html">Seller's Playbook</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/ask-kati.html">Ask Kati</a>
+      <a href="https://tire-clients.fly.dev">For Sellers & Buyers</a>
+      <a href="https://tire-agents.fly.dev">For Agents</a>
+      <a class="nav-cta" href="https://tire-clients.fly.dev">Get Matched</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">TruthCertified™ Agent Network</div>
+    <h1>Real estate advice you can <em>trust.</em></h1>
+    <p>We match sellers and buyers with vetted, TruthCertified™ agents — no upsells, no pressure, no guesswork. Personalized by Kati Spaniak.</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="https://tire-clients.fly.dev">I'm a Seller or Buyer</a>
+      <a class="btn-outline" href="https://tire-agents.fly.dev">I'm an Agent</a>
+    </div>
   </div>
-  <div class="coming-soon">Full site coming soon &mdash; truthinrealestate.com</div>
+
+  <section class="how">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-heading">My super simple process</h2>
+      <p class="section-sub">From your first form to finding your agent — we make this easy.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">One</div>
+          <h3>Fill Out My Form</h3>
+          <p>Once you fill out the form, I can usually find 2–3 of the best agents in your town within 48 hours. No guessing required.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Two</div>
+          <h3>Start Interviewing</h3>
+          <p>My team and I will make personal introductions to you and each agent. Pay attention to how quickly they respond — that tells you a lot.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Three</div>
+          <h3>Choose Your Agent</h3>
+          <p>Choose the agent you feel most comfortable with. We'll have provided you everything you need. Trust your gut!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="container">
+      <div class="section-label">The TruthCertified™ Standard</div>
+      <h2 class="section-heading">What I make sure every agent brings</h2>
+      <p class="section-sub">This isn't some pay-to-play directory — no agents can "buy" their way into my referral network.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🏆</div>
+          <h3>Professional Experience</h3>
+          <p>Every agent is vetted for their transaction history, results, and performance record before I ever recommend them.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📣</div>
+          <h3>Marketing & Online Presence</h3>
+          <p>I evaluate their marketing approach, online visibility, and ability to attract buyers to your home.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <h3>Team Support & Communication</h3>
+          <p>Great agents have a support system. I look for responsiveness, team structure, and clear communication habits.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">✅</div>
+          <h3>Honesty & Professionalism</h3>
+          <p>I personally vet for integrity. Your agent won't sugarcoat, won't upsell, and won't waste your time.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">💡</div>
+          <h3>Do You Click With Them?</h3>
+          <p>The final piece is yours to decide. I'll give you the candidates — you trust your gut on who's right for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-label">What Real Sellers Say</div>
+      <h2 class="section-heading">Hear it from the sellers & buyers</h2>
+      <p class="section-sub">Real results from real people who found their agent through our network.</p>
+      <div class="cards">
+        <div class="card">
+          <p>"We listed our home on Thursday. We had 4 showings and an open house. Multiple offers today! We are officially under contract — full price, no contingencies. To say we are thrilled would be an understatement."</p>
+          <div class="card-name">— Mary</div>
+        </div>
+        <div class="card">
+          <p>"Thanks to our agent's guidance, who Kati referred, we saved so much money and we sold our home over list price in one day with multiple offers! Follow Kati's advice and use her agent referral service."</p>
+          <div class="card-name">— Pamela</div>
+        </div>
+        <div class="card">
+          <p>"Well we received 11 offers — nine of them over asking! The agent you referred lessened our stress. She made the process seamless and we couldn't be happier."</p>
+          <div class="card-name">— Annette</div>
+        </div>
+        <div class="card">
+          <p>"Thank you for connecting us with three impressive agents! It saved us so much time and worry — no need to contact and evaluate dozens just to find one with the experience and drive we need."</p>
+          <div class="card-name">— Robert</div>
+        </div>
+        <div class="card">
+          <p>"Kati, you are doing a great service. The greatest gift to me has been the reduction in fear. My husband and I can do this, we can sell our home!"</p>
+          <div class="card-name">— Julie</div>
+        </div>
+        <div class="card">
+          <p>"Without Kati, our agent wouldn't have been on our radar. I'm incredibly grateful for Kati and the fantastic agent we found through her referral service."</p>
+          <div class="card-name">— Pamela</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+      <div class="section-label">The Team</div>
+      <h2 class="section-heading">Meet Kati's team</h2>
+      <p class="section-sub">People who've been there and done that — so you don't have to figure it out alone.</p>
+      <div class="team-grid">
+        <div class="member">
+          <div class="member-role">The Seller's Advocate</div>
+          <h3>Kati Spaniak</h3>
+          <p>Kati has helped thousands of sellers find the right real estate agent through her YouTube channel and referral service. A successful team leader and entrepreneur with thousands of transactions under her belt, she knows exactly what a great agent looks like — and is committed to matching you with one.</p>
+        </div>
+        <div class="member">
+          <div class="member-role">The Agent Matchmaker</div>
+          <h3>Lisa Spaniak</h3>
+          <p>Lisa is a top-performing real estate broker on Chicago's North Shore, contributing to over $500M in sales volume and recognized by Chicago Agent Magazine. A Notre Dame business graduate, she brings data-driven insight and genuine empathy to every match she helps make.</p>
+        </div>
+        <div class="member">
+          <div class="member-role">Director of Closing & Coordination</div>
+          <h3>Mia Guzman</h3>
+          <p>Mia has been at the center of Kati's real estate team for over three years. She oversees transactions from first referral to final close, keeping every moving piece organized and every client informed throughout the process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <h2>Ready to find an agent you can actually trust?</h2>
+    <p>No obligation. No cost to you. Just the right agent, matched personally.</p>
+    <a class="btn-dark" href="https://katispaniak.com">Get Matched with a TruthCertified™ Agent</a>
+  </div>
+
+  <footer>
+    <strong>Truth in Real Estate®</strong> &mdash; Kati Spaniak<br />
+    Licensed Real Estate Broker in Illinois &amp; Florida &mdash; eXp Realty<br />
+    1363 Shermer, Northbrook IL 60062 &nbsp;|&nbsp; 847.713.1556<br /><br />
+    <a href="https://tire-clients.fly.dev">Seller &amp; Buyer Portal</a> &nbsp;&middot;&nbsp;
+    <a href="https://tire-agents.fly.dev">Agent Portal</a> &nbsp;&middot;&nbsp;
+    <a href="/sellers-playbook.html">Seller's Playbook</a> &nbsp;&middot;&nbsp;
+    <a href="/faq.html">FAQ Library</a> &nbsp;&middot;&nbsp;
+    <a href="/ask-kati.html">Ask Kati</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a><br /><br />
+    &copy; 2026 Kati Spaniak &mdash; Truth in Real Estate®
+  </footer>
+
 </body>
 </html>

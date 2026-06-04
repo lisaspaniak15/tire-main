@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ Video Library — Truth in Real Estate®</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:  #14213d;
+      --cream: #faf9f6;
+      --teal:  #7a928d;
+      --gold:  #d4b07a;
+      --altbg: #f3f8fb;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e8e2d9;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.5rem 1.2rem; border-radius: 6px; }
+    .nav-cta:hover { background: #1c2e58 !important; }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(212,176,122,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.1; max-width: 640px; margin: 0 auto 1.25rem; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p { font-size: 1.1rem; color: #b8c5d0; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+    section { padding: 4.5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+    .section-heading { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { font-size: 1.05rem; color: var(--teal); line-height: 1.7; }
+
+    /* VIDEO GRID */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .video-card {
+      background: var(--white);
+      border: 1px solid #e8e2d9;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .video-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #e8e2d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .video-info { padding: 1.25rem; }
+    .video-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .video-title { font-size: 1rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+
+    /* PLACEHOLDER */
+    .content-area {
+      background: var(--white);
+      border: 2px dashed #e8e2d9;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .content-area p { color: var(--teal); font-size: 1rem; line-height: 1.7; }
+
+    footer {
+      background: var(--navy);
+      color: #8a9ab0;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">Truth in Real Estate<span>®</span></a>
+    <div class="nav-links">
+      <a href="https://tire-clients.fly.dev">For Sellers & Buyers</a>
+      <a href="https://tire-agents.fly.dev">For Agents</a>
+      <a class="nav-cta" href="https://tire-clients.fly.dev">Get Matched</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">FAQ Video Library</div>
+    <h1>Real answers to your <em>real</em> questions.</h1>
+    <p>Browse Kati's library of short videos covering the most common questions sellers and buyers ask.</p>
+  </div>
+
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-label">Browse by Topic</div>
+      <h2 class="section-heading">Find your answer</h2>
+      <p class="section-sub">Every video is short, straight to the point, and based on Kati's real experience.</p>
+
+      <!-- Kati: Replace this box with your video grid or embed. Sample card structure is below for reference. -->
+      <div class="content-area">
+        <p>🎬 <strong>Kati — add your FAQ videos here.</strong><br />
+        Each video can have a topic tag (e.g. "Pricing", "Choosing an Agent"), a title, and a YouTube embed or link.<br /><br />
+        A sample card layout is ready below — just uncomment and fill in your videos.</p>
+      </div>
+
+      <!--
+      SAMPLE VIDEO GRID — uncomment and fill in when ready:
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumb">[ YouTube embed ]</div>
+          <div class="video-info">
+            <div class="video-tag">Pricing</div>
+            <div class="video-title">How do I know if my home is priced right?</div>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb">[ YouTube embed ]</div>
+          <div class="video-info">
+            <div class="video-tag">Choosing an Agent</div>
+            <div class="video-title">What should I ask before hiring an agent?</div>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <footer>
+    <strong>Truth in Real Estate®</strong> &mdash; Kati Spaniak<br />
+    Licensed Real Estate Broker in Illinois &amp; Florida &mdash; eXp Realty<br />
+    1363 Shermer, Northbrook IL 60062 &nbsp;|&nbsp; 847.713.1556<br /><br />
+    <a href="/">Home</a> &nbsp;&middot;&nbsp;
+    <a href="/sellers-playbook.html">Seller's Playbook</a> &nbsp;&middot;&nbsp;
+    <a href="/ask-kati.html">Ask Kati</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a><br /><br />
+    &copy; 2026 Kati Spaniak &mdash; Truth in Real Estate®
+  </footer>
+
+</body>
+</html>

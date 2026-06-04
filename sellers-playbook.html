@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller's Playbook — Truth in Real Estate®</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:  #14213d;
+      --cream: #faf9f6;
+      --teal:  #7a928d;
+      --gold:  #d4b07a;
+      --altbg: #f3f8fb;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--navy); }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid #e8e2d9;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { color: var(--teal); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 0.5rem 1.2rem; border-radius: 6px; }
+    .nav-cta:hover { background: #1c2e58 !important; }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(212,176,122,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.1; max-width: 640px; margin: 0 auto 1.25rem; }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p { font-size: 1.1rem; color: #b8c5d0; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    section { padding: 4.5rem 2rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+    .section-heading { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { font-size: 1.05rem; color: var(--teal); line-height: 1.7; max-width: 580px; }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .step {
+      background: var(--white);
+      border: 1px solid #e8e2d9;
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+    }
+    .step-num { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .step h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .step p { font-size: 0.92rem; color: var(--teal); line-height: 1.65; }
+
+    /* PLACEHOLDER */
+    .content-area {
+      background: var(--white);
+      border: 2px dashed #e8e2d9;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .content-area p { color: var(--teal); font-size: 1rem; line-height: 1.7; }
+
+    /* CTA */
+    .cta-banner { background: var(--gold); text-align: center; padding: 4rem 2rem; }
+    .cta-banner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); margin-bottom: 0.75rem; }
+    .cta-banner p { font-size: 1rem; color: #4a3620; margin-bottom: 2rem; }
+    .btn-dark { background: var(--navy); color: var(--white); padding: 0.9rem 2.2rem; border-radius: 7px; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: inline-block; transition: opacity 0.2s; }
+    .btn-dark:hover { opacity: 0.85; }
+
+    footer {
+      background: var(--navy);
+      color: #8a9ab0;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer strong { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">Truth in Real Estate<span>®</span></a>
+    <div class="nav-links">
+      <a href="https://tire-clients.fly.dev">For Sellers & Buyers</a>
+      <a href="https://tire-agents.fly.dev">For Agents</a>
+      <a class="nav-cta" href="https://tire-clients.fly.dev">Get Matched</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-label">Seller's Playbook</div>
+    <h1>Everything you need to <em>sell with confidence.</em></h1>
+    <p>Kati's step-by-step guide to selling your home — without the stress, the guesswork, or the regret.</p>
+  </div>
+
+  <!-- STEPS SECTION -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-label">The Playbook</div>
+      <h2 class="section-heading">Kati's selling process, start to finish</h2>
+      <p class="section-sub">Follow these steps and you'll know exactly what to expect at every stage of the sale.</p>
+
+      <!-- Kati: Replace the placeholder box below with your actual playbook steps, or expand the sample step cards -->
+      <div class="content-area">
+        <p>📋 <strong>Kati — add your seller's playbook content here.</strong><br />
+        This could be a step-by-step checklist, a downloadable PDF, a video walkthrough, or a combination.<br /><br />
+        Sample step cards are ready below — just uncomment and fill them in.</p>
+      </div>
+
+      <!--
+      SAMPLE STEP CARDS — uncomment and fill in when ready:
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">Step 01</div>
+          <h3>Decide If You're Ready to Sell</h3>
+          <p>Before anything else, get clear on your timeline, your motivation, and what success looks like for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 02</div>
+          <h3>Find the Right Agent</h3>
+          <p>Your agent is your most important decision. Here's exactly what to look for — and what to avoid.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 03</div>
+          <h3>Price It Right From Day One</h3>
+          <p>Overpricing is the #1 mistake sellers make. Here's how to evaluate a CMA and set a price that attracts offers.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 04</div>
+          <h3>Prepare Your Home</h3>
+          <p>Small improvements can make a big difference. Here's Kati's pre-listing checklist.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 05</div>
+          <h3>Review Offers Like a Pro</h3>
+          <p>Price isn't everything. Learn how to read an offer — contingencies, financing, timelines — so you choose the right buyer.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 06</div>
+          <h3>Get to the Closing Table</h3>
+          <p>What happens after you accept an offer, and how to make sure nothing falls through before closing day.</p>
+        </div>
+      </div>
+      -->
+
+    </div>
+  </section>
+
+  <!-- RESOURCES SECTION -->
+  <section style="background: var(--altbg);">
+    <div class="container">
+      <div class="section-label">Free Resources</div>
+      <h2 class="section-heading">Tools to help you along the way</h2>
+      <p class="section-sub">Downloads, checklists, and guides Kati has put together for sellers just like you.</p>
+
+      <!-- Kati: Add downloadable resources, links to videos, or embedded PDFs here -->
+      <div class="content-area">
+        <p>📎 <strong>Kati — add your downloadable resources here.</strong><br />
+        This could be a pre-listing checklist PDF, a home prep guide, a questions-to-ask-your-agent worksheet, etc.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <h2>Ready to find your agent?</h2>
+    <p>Let Kati match you with a TruthCertified™ agent in your area — no cost, no obligation.</p>
+    <a class="btn-dark" href="https://tire-clients.fly.dev">Get Matched Now</a>
+  </div>
+
+  <footer>
+    <strong>Truth in Real Estate®</strong> &mdash; Kati Spaniak<br />
+    Licensed Real Estate Broker in Illinois &amp; Florida &mdash; eXp Realty<br />
+    1363 Shermer, Northbrook IL 60062 &nbsp;|&nbsp; 847.713.1556<br /><br />
+    <a href="/">Home</a> &nbsp;&middot;&nbsp;
+    <a href="/ask-kati.html">Ask Kati</a> &nbsp;&middot;&nbsp;
+    <a href="/faq.html">FAQ Library</a> &nbsp;&middot;&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a><br /><br />
+    &copy; 2026 Kati Spaniak &mdash; Truth in Real Estate®
+  </footer>
+
+</body>
+</html>
